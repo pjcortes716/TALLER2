@@ -2,7 +2,7 @@ from multiprocessing import Pool
 import time
 import math
 
-N = 5000000
+N = 4819136400
 
 def cube(x):
     return x**3+math.sqrt(x)+x**2+x
@@ -11,7 +11,7 @@ if __name__ == "__main__":
     # first way, using multiprocessing
     start_time = time.perf_counter()
     with Pool() as pool:
-      result = pool.map(cube, range(10,N))
+      result = pool.map(cube, range(10,math.sqrt(N)))
     finish_time = time.perf_counter()
     print("Program finished in {} seconds - using multiprocessing".format(finish_time-start_time))
     print("---")
